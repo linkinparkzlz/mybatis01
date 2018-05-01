@@ -2,6 +2,10 @@ package com.zou.mappers;
 
 import com.zou.model.Address;
 import com.zou.model.Student;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
@@ -51,6 +55,18 @@ public interface StudentMapper {
     //  分页
     public List<Student> findStudents(RowBounds rowBounds);
 
+    //使用注解
+    @Insert("insert into t_student values(null,#{name},#{age})")
+    public int insertStudent(Student student);
+
+    @Update("update t_student set name=#{name},age=#{age} where id=#{id}")
+    public int updateStudent1(Student student);
+
+    @Delete(("deleteStudent where id=#{id}"))
+    public int deleteStudent1(int id);
+
+    @Select("select * from t_student where id=#{id}")
+    public Student getStudent(Integer id);
 
 }
 

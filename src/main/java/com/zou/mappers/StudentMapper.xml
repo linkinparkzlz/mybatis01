@@ -18,6 +18,18 @@
         <result property="address.city" column="city"/>
         -->
 
+
+        <association property="address" resultMap="AddressResult"></association>
+
+    </resultMap>
+
+
+    <resultMap id="Address" type="AddressResult">
+
+        <result property="id" column="id"/>
+        <result property="provience" column="id"/>
+        <result property="city" column="city"/>
+
     </resultMap>
 
 
@@ -48,7 +60,7 @@
         SELECT * FROM t_student WHERE id=#{id}
     </select>
 
-    <select id="findAll"  resultMap="StudentResult">
+    <select id="findAll" resultMap="StudentResult">
 
         SELECT * FROM t_student
     </select>

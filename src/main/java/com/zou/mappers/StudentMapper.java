@@ -29,6 +29,10 @@ public interface StudentMapper {
     public List<Student> searchStudents(Map<String,Object> map);
 
 
+    //复杂sql  when
+    public List<Student> searchStudents2(Map<String,Object> map);
+
+
 
 }
 

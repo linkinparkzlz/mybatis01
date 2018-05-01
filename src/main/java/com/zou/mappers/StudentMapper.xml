@@ -93,6 +93,31 @@
 
     </select>
 
+    <!-- 复杂sql   when语句 -->
+
+
+    <select id="searchStudents2" parameterType="Map" resultMap="StudentResult">
+
+        SELECT * FROM t_student
+        <choose>
+
+            <when test="searchBy=='gradeId'">
+                WHERE gradeId=#{gradeId}
+            </when>
+
+            <when test="searchBy=='name'">
+                WHERE name LIKE #{name}
+            </when>
+
+            <otherwise>
+                WHERE age=#{age}
+            </otherwise>
+
+        </choose>
+
+    </select>
+
+
 
 
 

@@ -25,7 +25,19 @@
     </environments>
 
     <mappers>
+        <!--
+
         <mapper resource="com/zou/mappers/StudentMapper.xml"/>
+        -->
+
+
+        <!--
+        <mapper class="com.zou.mappers.StudentMapper"/>
+        -->
+
+       <package name="com.zou.mappers"/>
+
+
     </mappers>
 
 

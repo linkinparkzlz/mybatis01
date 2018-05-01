@@ -44,6 +44,9 @@ public interface StudentMapper {
     //  set  更新一个字段
     public int updateStudent(Student student);
 
+    //多参数
+    public List<Student> searchStudent6s(String name, String age);
+
 
 }
 

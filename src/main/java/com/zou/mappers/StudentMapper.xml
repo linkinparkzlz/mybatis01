@@ -231,6 +231,14 @@
     </update>
 
 
+
+    <!-- 多参数 -->
+    <select id="searchStudents6" resultMap="StudentResult">
+
+        SELECT * FROM t_student WHERE name like #{param1} and age = #{param2}
+    </select>
+
+
 </mapper>
 
 

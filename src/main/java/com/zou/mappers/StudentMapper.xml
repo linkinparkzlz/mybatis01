@@ -18,8 +18,15 @@
         <result property="address.city" column="city"/>
         -->
 
+        <!--
 
+          第二种方式  也不是最优的
         <association property="address" resultMap="AddressResult"></association>
+
+        -->
+
+        
+        <association property="address" column="id" select="com.zou.mappers.AddressMapper.findById"></association>
 
     </resultMap>
 
@@ -55,7 +62,7 @@
         DELETE FROM t_student WHERE id=#{id}
     </delete>
 
-    <select id="findId" parameterType="Integer" resultMap="Student">
+    <select id="findById" parameterType="Integer" resultMap="Student">
 
         SELECT * FROM t_student WHERE id=#{id}
     </select>

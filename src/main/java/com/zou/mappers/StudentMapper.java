@@ -1,10 +1,12 @@
 package com.zou.mappers;
 
+import com.zou.model.Address;
 import com.zou.model.Student;
 
 import java.util.List;
 
 public interface StudentMapper {
+
 
     public int add(Student student);
 
@@ -17,4 +19,6 @@ public interface StudentMapper {
     public List<Student> findAll();
 
     public Student findStudentWithAddress(Integer id);
+
 }
+

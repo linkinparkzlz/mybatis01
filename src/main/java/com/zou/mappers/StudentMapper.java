@@ -2,6 +2,7 @@ package com.zou.mappers;
 
 import com.zou.model.Address;
 import com.zou.model.Student;
+import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 import java.util.Map;
@@ -46,6 +47,9 @@ public interface StudentMapper {
 
     //多参数
     public List<Student> searchStudent6s(String name, String age);
+
+    //  分页
+    public List<Student> findStudents(RowBounds rowBounds);
 
 
 }

@@ -80,4 +80,64 @@
     </select>
 
 
+    <!-- 复杂sql    if 语句 -->
+    <select id="searchStudents" parameterType="Map" resultMap="StudentResult">
+
+        SELECT * FROM t_student WHERE gradeId=#{gradeId}
+        <if test="name!=null">
+            AND name LIKE #{name}
+        </if>
+        <if test="age != null">
+            and age=#{age}
+        </if>
+
+    </select>
+
+
+
+
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

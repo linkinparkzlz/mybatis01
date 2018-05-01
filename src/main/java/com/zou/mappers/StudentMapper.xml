@@ -152,6 +152,41 @@
     </select>
 
 
+    <!-- trim语句  -->
+
+    <select id="searchStudents4" parameterType="Map" resultMap="StudentResult">
+
+        SELECT * FROM t_student
+
+        <trim prefix="where" prefixOverrides="and|or">
+
+            SELECT * FROM t_student
+            <where>
+
+                <if test="gradeId != null">
+                    gradeId = #{gradeId}
+                </if>
+
+                <if test="name != null">
+                    and name LIKE #{name}
+                </if>
+
+                <if test="age != null">
+                    AND age=#{age}
+                </if>
+
+
+            </where>
+
+
+        </trim>
+
+
+    </select>
+
+
+
+
 
 
 

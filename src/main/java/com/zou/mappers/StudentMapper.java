@@ -35,6 +35,9 @@ public interface StudentMapper {
     //where 语句
     public List<Student> searchStudents3(Map<String, Object> map);
 
+    //trim  语句
+    public List<Student> searchStudents4(Map<String, Object> map);
+
 
 }
 

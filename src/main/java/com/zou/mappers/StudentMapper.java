@@ -38,6 +38,9 @@ public interface StudentMapper {
     //trim  语句
     public List<Student> searchStudents4(Map<String, Object> map);
 
+    //  foreach语句
+    public List<Student> searchStudents5(Map<String, Object> map);
+
 
 }
 

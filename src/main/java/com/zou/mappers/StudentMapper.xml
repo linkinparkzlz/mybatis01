@@ -186,6 +186,30 @@
 
 
 
+    <!--  trim语句  -->
+
+    <select id="searchStudents5" parameterType="Map" resultMap="StudentResult">
+
+
+        SELECT * FROM t_student
+        <if test="gradeIds != null">
+
+            <where>
+
+                gradeId IN
+                <foreach item="gradeId" collection="gradeIds" open="(" separator="," close=")">
+                    #{gradeId}
+                </foreach>
+
+            </where>
+
+        </if>
+
+
+    </select>
+
+
+
 
 
 

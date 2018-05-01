@@ -26,12 +26,14 @@ public interface StudentMapper {
 
     //f复杂sql  if
 
-    public List<Student> searchStudents(Map<String,Object> map);
+    public List<Student> searchStudents(Map<String, Object> map);
 
 
     //复杂sql  when
-    public List<Student> searchStudents2(Map<String,Object> map);
+    public List<Student> searchStudents2(Map<String, Object> map);
 
+    //where 语句
+    public List<Student> searchStudents3(Map<String, Object> map);
 
 
 }

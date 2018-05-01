@@ -25,7 +25,7 @@
 
         -->
 
-        
+
         <association property="address" column="id" select="com.zou.mappers.AddressMapper.findById"></association>
 
         <association property="grade" column="gradeId" select="com.zou.mappers.GradesMapper.findById"></association>
@@ -116,6 +116,44 @@
         </choose>
 
     </select>
+
+
+    <!--   where  语句  -->
+
+
+    <select id="searchStudents3" parameterType="Map" resultMap="StudentResult">
+
+        SELECT * FROM t_student
+
+        <where>
+
+            SELECT * FROM t_student
+            <where>
+
+                <if test="gradeId != null">
+                    gradeId = #{gradeId}
+                </if>
+
+                <if test="name != null">
+                    and name LIKE #{name}
+                </if>
+
+                <if test="age != null">
+                    AND age=#{age}
+                </if>
+
+
+            </where>
+
+
+        </where>
+
+
+    </select>
+
+
+
+
 
 
 

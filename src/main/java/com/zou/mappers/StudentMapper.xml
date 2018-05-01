@@ -28,6 +28,8 @@
         
         <association property="address" column="id" select="com.zou.mappers.AddressMapper.findById"></association>
 
+        <association property="grade" column="gradeId" select="com.zou.mappers.GradesMapper.findById"></association>
+
     </resultMap>
 
 
@@ -40,8 +42,13 @@
     </resultMap>
 
 
-    <select id="findStudentWithAddress" resultMap="StudentResult" parameterType="Integer">
+    <select id="findByGradeId" resultMap="StudentResult" parameterType="Integer">
 
+        SELECT * FROM t_student WHERE gradeId=#{gradeId}
+    </select>
+
+
+    <select id="findStudentWithAddress" resultMap="StudentResult" parameterType="Integer">
 
         SELECT * FROM t_student t1, aaddress t2 WHERE t1.addressId = t2.id and t1.id=#{id}
 

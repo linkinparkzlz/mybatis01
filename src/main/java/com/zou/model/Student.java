@@ -8,6 +8,17 @@ public class Student {
 
     private Address address;
 
+    private Grade grade;
+
+
+    public Grade getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Grade grade) {
+        this.grade = grade;
+    }
+
     public Address getAddress() {
         return address;
     }
@@ -46,5 +57,11 @@ public class Student {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

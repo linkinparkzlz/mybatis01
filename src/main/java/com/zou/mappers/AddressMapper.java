@@ -7,6 +7,11 @@ import java.util.List;
 public interface AddressMapper {
 
 
-    public Student findById(Integer id);
+    /**
+     * 通过Id查找年级
+     * @param id
+     * @return
+     */
+    public GradeMapper findById(Integer id);
 
 }

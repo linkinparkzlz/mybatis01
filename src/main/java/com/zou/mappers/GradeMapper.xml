@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zou.mappers.GradeMapper">
+
+
+    <resultMap id="Grade" type="GradeResult">
+
+        <result property="id" column="id"/>
+        <result property="gradeName" column="gradeName"/>
+
+        <collection property="students" column="id" select="com.zou.mappers.StudentMapper.findByGradeId"></collection>
+
+
+    </resultMap>
+
+
+    <select id="findById" parameterType="Integer" resultMap="GradeResult">
+
+        SELECT * FROM t_grade WHERE id=#{id}
+    </select>
+
+    <select id="findByGradeId" resultMap="StudentResultMap" parameterType="Integer">
+        SELECT * FROM t_student t1,t_address t2 WHERE t1.addressId=t2.id AND t1.id=#{id}
+    </select>
+
+
+</mapper>

@@ -185,7 +185,6 @@
     </select>
 
 
-
     <!--  trim语句  -->
 
     <select id="searchStudents5" parameterType="Map" resultMap="StudentResult">
@@ -209,13 +208,27 @@
     </select>
 
 
+    <!--  set语句 -->
+
+    <update id="updateStudent" parameterType="Student">
 
 
+        UPDATE t_student
+        <set>
+
+            <if test="name != null">
+                name=#{name},
+            </if>
+
+            <if test="age != null">
+                age=#{age}
+            </if>
 
 
+        </set>
+        WHERE id = #{id}
 
-
-
+    </update>
 
 
 </mapper>

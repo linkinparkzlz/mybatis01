@@ -41,6 +41,25 @@ public interface StudentMapper {
     //  foreach语句
     public List<Student> searchStudents5(Map<String, Object> map);
 
+    //  set  更新一个字段
+    public int updateStudent(Student student);
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

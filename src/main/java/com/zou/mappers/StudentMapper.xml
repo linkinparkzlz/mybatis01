@@ -10,7 +10,24 @@
         <result property="name" column="name"/>
         <result property="age" column="age"/>
 
+
+        <!--
+        对象级联的方式实现一对一关系
+        <result property="address.id" column="addressId"/>
+        <result property="address.provience" column="provience"/>
+        <result property="address.city" column="city"/>
+        -->
+
     </resultMap>
+
+
+    <select id="findStudentWithAddress" resultMap="StudentResult" parameterType="Integer">
+
+
+        SELECT * FROM t_student t1, aaddress t2 WHERE t1.addressId = t2.id and t1.id=#{id}
+
+    </select>
+
 
     <insert id="add" parameterMap="Student">
         INSERT INTO t_student VALUES (NULL ,#{name},#{age})
